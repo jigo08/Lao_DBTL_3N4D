@@ -441,6 +441,75 @@ footer{background:#0d1f13;color:rgba(255,255,255,.75);padding:56px clamp(16px,5v
 .ct-trigger{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#1A7D3C,#2DB354);color:#fff;padding:14px 30px;border-radius:50px;font-weight:800;font-size:15px;border:none;cursor:pointer;font-family:"Be Vietnam Pro",sans-serif;transition:all .25s;box-shadow:0 4px 20px rgba(26,125,60,.35)}
 .ct-trigger:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(26,125,60,.45)}
 @media(max-width:600px){.modal-box{border-radius:16px 16px 0 0;align-self:flex-end;max-height:95vh}.modal-header,.modal-body{padding:22px 20px}.m-fg{grid-template-columns:1fr}.m-fi.full{grid-column:span 1}}
+/* ============================================================
+   FIXED CONTACT BUTTONS (ZALO, CALL, FACEBOOK)
+============================================================ */
+.fixed-contact-wrapper {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 99999;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contact-circle-btn {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.contact-circle-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Màu sắc đặc trưng của từng nút */
+.btn-phone {
+  background-color: #2db354; /* Màu xanh lá cây */
+  animation: quick-alo-circle-anim 1.2s infinite ease-in-out;
+}
+
+.btn-zalo {
+  background-color: #0068ff; /* Màu xanh Zalo */
+}
+
+.btn-facebook {
+  background-color: #1877f2; /* Màu xanh Facebook */
+}
+
+/* Hiệu ứng rung nhẹ cho nút Gọi điện để gây chú ý */
+@keyframes quick-alo-circle-anim {
+  0% { transform: rotate(0) scale(1) skew(1deg); }
+  10% { transform: rotate(-25deg) scale(1) skew(1deg); }
+  20% { transform: rotate(25deg) scale(1) skew(1deg); }
+  30% { transform: rotate(-25deg) scale(1) skew(1deg); }
+  40% { transform: rotate(25deg) scale(1) skew(1deg); }
+  50% { transform: rotate(0) scale(1) skew(1deg); }
+  100% { transform: rotate(0) scale(1) skew(1deg); }
+}
+
+/* Tối ưu trên điện thoại: Cho icon nhỏ lại một chút để không che nội dung */
+@media (max-width: 768px) {
+  .fixed-contact-wrapper {
+    bottom: 16px;
+    right: 16px;
+    gap: 10px;
+  }
+  .contact-circle-btn {
+    width: 46px;
+    height: 46px;
+  }
+}
 </style>
 </head>
 <body>
@@ -1163,5 +1232,27 @@ function showCTSuccess(){
   document.getElementById("ctSuccess").classList.add("show");
 }
 </script>
+<div class="fixed-contact-wrapper">
+  
+  <a href="tel:0912992447" class="contact-circle-btn btn-phone" title="Gọi điện hotline">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+      <path d="M6.62 10.79a15.15 15.15 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24 11.4 11.4 0 0 0 3.58.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .57 3.58 1 1 0 0 1-.24 1.02z"/>
+    </svg>
+  </a>
+
+  <a href="https://zalo.me/0912992447" target="_blank" rel="noopener noreferrer" class="contact-circle-btn btn-zalo" title="Chat Zalo">
+    <svg viewBox="0 0 24 24" width="30" height="30" fill="white">
+      <path d="M12 3c-4.97 0-9 3.58-9 8 0 2.45 1.25 4.63 3.22 5.96-.1.4-.4 1.5-.5 1.9-.12.45.15.44.35.3.32-.2 1.8-1.1 2.4-1.5.8.2 1.6.34 2.53.34 4.97 0 9-3.58 9-8s-4.03-8-9-8z"/>
+      <text x="12" y="14.5" font-family="Arial, sans-serif" font-weight="900" font-size="9" text-anchor="middle" fill="#0068FF">Zalo</text>
+    </svg>
+  </a>
+
+  <a href="https://m.me/vietkitetravelhcm" target="_blank" rel="noopener noreferrer" class="contact-circle-btn btn-facebook" title="Chat Facebook">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+      <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.75z"/>
+    </svg>
+  </a>
+
+</div>
 </body>
 </html>
