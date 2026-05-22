@@ -416,4 +416,668 @@ input:focus,select:focus,textarea:focus{border-color:var(--orange);background:#f
 ============================================================ */
 footer{background:#0d1f13;color:rgba(255,255,255,.75);padding:56px clamp(16px,5vw,60px) 28px}
 .ft-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px}
-.ft-brand img{height:52px;margin-bottom:14px;background:#fff;padding:4px 12
+.ft-brand img{height:52px;margin-bottom:14px;background:#fff;padding:4px 12px;border-radius:8px;object-fit:contain}
+.ft-brand p{font-size:14px;line-height:1.75;color:rgba(255,255,255,.55)}
+.ft-col h4{color:#fff;font-weight:800;font-size:14px;margin-bottom:16px}
+.ft-col ul{list-style:none}
+.ft-col ul li{margin-bottom:9px}
+.ft-col ul li a{color:rgba(255,255,255,.55);font-size:13.5px;transition:color .2s}
+.ft-col ul li a:hover{color:var(--orange2)}
+.ft-contact{font-size:13.5px;color:rgba(255,255,255,.6);line-height:2}
+.ft-contact a{color:var(--orange2)}
+.ft-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:22px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:12px;color:rgba(255,255,255,.35)}
+.socials{display:flex;gap:10px}
+.socials a{
+  width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,.2);
+  display:flex;align-items:center;justify-content:center;
+  color:rgba(255,255,255,.55);font-size:15px;transition:all .2s
+}
+.socials a:hover{background:var(--orange);border-color:var(--orange);color:#fff}
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+@media(max-width:960px){
+  .nav-links,.nav-cta{display:none}
+  .hamburger{display:flex}
+  .ft-grid{grid-template-columns:1fr 1fr}
+  .svc-grid{grid-template-columns:1fr}
+}
+@media(max-width:768px){
+  .gal-grid{
+    grid-template-columns:1fr 1fr;
+    grid-template-rows:auto
+  }
+  .g1{grid-column:1/3;grid-row:auto;height:220px}
+  .g2,.g3,.g4,.g5{grid-column:auto;grid-row:auto;height:160px}
+  .day-card{grid-template-columns:72px 1fr}
+  .day-num .n{font-size:30px}
+  .day-banner{height:110px}
+}
+@media(max-width:600px){
+  .fg{grid-template-columns:1fr}
+  .fi.full{grid-column:span 1}
+  .gal-grid{grid-template-columns:1fr;grid-template-rows:auto}
+  .g1,.g2,.g3,.g4,.g5{grid-column:auto;grid-row:auto;height:200px}
+  .ft-grid{grid-template-columns:1fr}
+  .trust-inner{justify-content:center;gap:24px}
+  .price-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">
+    <a href="#home" class="logo-home" id="nav-logo-link"><img src="https://vietkite.com.vn/wp-content/uploads/2024/12/logo-cty-canh-dieu-viet-vietkite.jpg" alt="VietKite Travel"></a>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#highlights" id="nav-highlights">Điểm Nổi Bật</a></li>
+    <li><a href="#gallery" id="nav-gallery">Hình Ảnh</a></li>
+    <li><a href="#itinerary" id="nav-itinerary">Lịch Trình</a></li>
+    <li><a href="#pricing" id="nav-pricing">Giá Tour</a></li>
+    <li><a href="#booking" id="nav-booking">Đặt Tour</a></li>
+  </ul>
+  <a href="#booking" class="nav-cta" id="nav-cta-booking">🌏 Đặt Ngay</a>
+  <button class="hamburger" onclick="toggleMob()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mob-menu" id="mobMenu">
+  <a href="#highlights" onclick="toggleMob()" id="mob-highlights">Điểm Nổi Bật</a>
+  <a href="#gallery" onclick="toggleMob()" id="mob-gallery">Hình Ảnh</a>
+  <a href="#itinerary" onclick="toggleMob()" id="mob-itinerary">Lịch Trình</a>
+  <a href="#pricing" onclick="toggleMob()" id="mob-pricing">Giá Tour</a>
+  <a href="#booking" onclick="toggleMob()" id="mob-booking">🌏 Đặt Tour Ngay</a>
+</div>
+
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-badge">✈ Khởi hành hàng tuần từ TP.HCM</div>
+    <h1>Lào – Đông Bắc<br><span>Thái Lan</span><br>4 Ngày 3 Đêm</h1>
+    <p class="hero-sub">Hành trình liên tuyến 3 quốc gia qua Campuchia • Thác Khone Phapheng vĩ đại • Wat Phou UNESCO • Cao nguyên Bolaven</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><strong>4N3Đ</strong><span>Ngày khám phá</span></div>
+      <div class="hero-stat"><strong>3</strong><span>Quốc gia</span></div>
+      <div class="hero-stat"><strong>8.29M₫</strong><span>Từ / khách</span></div>
+      <div class="hero-stat"><strong>4★</strong><span>Khách sạn</span></div>
+    </div>
+    <div class="hero-btns">
+      <a href="#booking" class="btn-p" id="hero-btn-booking">🎒 Đặt Tour Ngay</a>
+      <a href="#itinerary" class="btn-o" id="hero-btn-itinerary">Xem Lịch Trình</a>
+    </div>
+  </div>
+  <div class="hero-scroll">Khám phá</div>
+</section>
+
+<div class="trust">
+  <div class="trust-inner">
+    <div class="trust-item"><div class="big">15+</div><small>Năm kinh nghiệm</small></div>
+    <div class="trust-item"><div class="big">50K+</div><small>Khách hài lòng</small></div>
+    <div class="trust-item"><div class="big">200M₫</div><small>BH tối đa / khách</small></div>
+    <div class="trust-item"><div class="big">4★</div><small>Khách sạn</small></div>
+    <div class="trust-item"><div class="big">10+</div><small>Điểm tham quan</small></div>
+  </div>
+</div>
+
+<section class="highlights" id="highlights" style="background:#fff">
+  <div class="sec-head c">
+    <span class="sec-label">Điểm nổi bật</span>
+    <h2 class="sec-title" id="diemnoibat">Trải nghiệm độc đáo chỉ có ở tour này</h2>
+    <p class="sec-sub">Hành trình 3 quốc gia – từ kỳ quan thiên nhiên đến di sản văn hoá thế giới</p>
+  </div>
+  <div class="hl-grid">
+
+    <div class="hl-card">
+      <img class="hl-img"
+           src="https://vnn.1cdn.vn/2025/04/27/uploads-2025-thang-4-ngay-24-anh-3-4-13-1536x770.jpg"
+           onerror="this.src='https://vnn.1cdn.vn/2025/04/27/uploads-2025-thang-4-ngay-24-anh-3-4-13-1536x770.jpg'"
+           alt="Thác Khone Phapheng">
+      <h3>🌊 Thác Khone Phapheng</h3>
+      <p>Thác nước lớn nhất Đông Nam Á trên sông Mê Kông – kỳ quan thiên nhiên không thể bỏ lỡ.</p>
+    </div>
+
+    <div class="hl-card">
+      <img class="hl-img"
+           src="https://redsvn.net/wp-content/uploads/2099/05/Wat-Phou-05.jpg"
+           onerror="https://redsvn.net/wp-content/uploads/2099/05/Wat-Phou-05.jpg'"
+           alt="Wat Phou UNESCO">
+      <h3>🏛️ Wat Phou – Di sản UNESCO</h3>
+      <p>Quần thể đền Khmer thế kỷ VI – "Angkor Wat thu nhỏ" của Lào được UNESCO công nhận.</p>
+    </div>
+
+    <div class="hl-card">
+      <img class="hl-img"
+           src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Tad_Hang_waterfalls%2C_Tad_Lo_village%2C_Bolaven_Plateau%2C_Laos.jpg"
+           onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/5/5c/Tad_Hang_waterfalls%2C_Tad_Lo_village%2C_Bolaven_Plateau%2C_Laos.jpg'"
+           alt="Thác Tad Fane Bolaven">
+      <h3>🌿 Cao nguyên Bolaven</h3>
+      <p>Thác Tad Fane, Thác Nhương hùng vĩ – đồn điền cà phê thượng hạng giữa mây mù.</p>
+    </div>
+
+    <div class="hl-card">
+      <img class="hl-img"
+           src="https://vietkite.com.vn/wp-content/uploads/2024/12/chua-huynh-quang-ubon.jpg"
+           onerror="this.src='https://files.thailandtourismdirectory.go.th/assets/upload/2021/10/6//9e5e204b-57de-4992-b209-155e22a2fa75.jpg'"
+           alt="Chùa Huỳnh Quang">
+      <h3>🕌 Chùa Huỳnh Quang</h3>
+      <p>Wat Sirindhorn Wararam – ngôi chùa lấp lánh kỳ ảo trên đỉnh núi Phurao xứ Thái.</p>
+    </div>
+
+  </div>
+</section>
+
+<section class="gallery" id="gallery" style="padding-bottom:clamp(56px,8vw,100px)">
+  <div class="sec-head c" style="padding:clamp(56px,8vw,100px) 0 0">
+    <span class="sec-label">Hình ảnh</span>
+    <h2 class="sec-title" id="hinhanh">Khoảnh khắc đáng nhớ</h2>
+  </div>
+  <div style="padding:32px clamp(16px,5vw,60px) 0">
+  <div class="gal-grid">
+
+    <div class="g-item g1">
+      <img src="https://datviettour.com.vn/uploads/images/tin-tuc-SEO-NN-chau-a/lao/danh-thang/bolaven-thoi-diem-dep-nhat.jpeg"
+           onerror="this.src='https://datviettour.com.vn/uploads/images/tin-tuc-SEO-NN-chau-a/lao/danh-thang/duong-mon-bolaven.jpg'"
+           alt="Thác Khone Phapheng">
+      <div class="g-caption">Thác Khone Phapheng – Lớn nhất ĐNA</div>
+    </div>
+
+    <div class="g-item g2">
+      <img src="https://images.trvl-media.com/place/2815/dd7a1c5d-8836-41a9-973b-11f19a4a4f09.jpg"
+           onerror="this.src='https://images.trvl-media.com/place/2815/dd7a1c5d-8836-41a9-973b-11f19a4a4f09.jpg'"
+           alt="Pakse sông Mê Kông">
+      <div class="g-caption">Thành phố Pakse</div>
+    </div>
+
+    <div class="g-item g3">
+      <img src="https://redsvn.net/wp-content/uploads/2099/05/Wat-Phou-05.jpg"
+           onerror="this.src='https://redsvn.net/wp-content/uploads/2099/05/Wat-Phou-05.jpg'"
+           alt="Wat Phou">
+      <div class="g-caption">Wat Phou – UNESCO</div>
+    </div>
+
+    <div class="g-item g4">
+      <img src="https://etrip4utravel.s3-ap-southeast-1.amazonaws.com/images/tinymce/2021/08/4ea6530c-8059-4d22-9049-f266e4445cec.jpg"
+           onerror="https://etrip4utravel.s3-ap-southeast-1.amazonaws.com/images/tinymce/2021/08/4ea6530c-8059-4d22-9049-f266e4445cec.jpg'"
+           alt="Chùa Thái Lan">
+      <div class="g-caption">Ubon Ratchathani – Thái Lan</div>
+    </div>
+
+    <div class="g-item g5">
+      <img src="https://vietkite.com.vn/wp-content/uploads/2024/12/thac-tad-fane-bolaven-lao.jpg"
+           onerror="this.src='https://datviettour.com.vn/uploads/images/tin-tuc-SEO-NN-chau-a/lao/danh-thang/duong-mon-bolaven.jpg'"
+           alt="Thác Tad Fane">
+      <div class="g-caption">Cao nguyên Bolaven</div>
+    </div>
+
+  </div>
+  </div>
+</section>
+
+<section class="itin" id="itinerary">
+  <div class="sec-head">
+    <span class="sec-label">Chương trình</span>
+    <h2 class="sec-title" id="lichtrinh">Lịch trình chi tiết 4 ngày 3 đêm</h2>
+    <p class="sec-sub">Mỗi ngày là một hành trình khám phá mới, sắp xếp tối ưu để bạn tận hưởng trọn vẹn.</p>
+  </div>
+  <div class="day-list">
+
+    <div class="day-card">
+      <div class="day-num"><span class="lbl">Ngày</span><span class="n">1</span></div>
+      <div class="day-body">
+        <img class="day-banner"
+             src="https://vietkite.com.vn/wp-content/uploads/2024/12/thac-khone-phapheng-lao.jpg"
+             onerror="this.src='https://kyluc.vn/Userfiles/Upload/images/Khone%20Phapheng.jpg'"
+             alt="Ngày 1">
+        <div class="day-title">TP.HỒ CHÍ MINH → CAMPUCHIA → LÀO</div>
+        <div class="day-route">HCM 🚌 Xa Mát → StungTreng → Pakse</div>
+        <div class="meals">
+          <span class="meal">🌅 Điểm tâm sáng</span>
+          <span class="meal">🍜 Cơm trưa</span>
+          <span class="meal">🍽️ Cơm tối</span>
+        </div>
+        <ul class="acts">
+          <li>04h00 – Xe đón tại điểm hẹn, khởi hành qua cửa khẩu Xa Mát (Tây Ninh)</li>
+          <li>Qua biên giới Campuchia, dùng cơm trưa tại StungTreng hoặc Kratier</li>
+          <li><strong>Thác Khone Phapheng</strong> – Thác nước lớn nhất Đông Nam Á</li>
+          <li>Về Pakse – thành phố lớn thứ 3 Lào, thưởng thức xôi, thịt nướng, cá nướng, món Lạp</li>
+          <li>🏨 Nghỉ đêm tại khách sạn 4★ Pakse</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="day-card">
+      <div class="day-num"><span class="lbl">Ngày</span><span class="n">2</span></div>
+      <div class="day-body">
+        <img class="day-banner"
+             src="https://vietkite.com.vn/wp-content/uploads/2024/12/chua-huynh-quang-ubon.jpg"
+             onerror="this.src='https://mysakonnakhon.com/wp-content/uploads/photo-gallery/imported_from_media_libray/Wat-Tai-Phrachao-Yai-Ong-Tue-5.jpg?bwg=1647571559'"
+             alt="Ngày 2 Ubon">
+        <div class="day-title">LÀO → ĐÔNG BẮC THÁI LAN → PAKSE</div>
+        <div class="day-route">Pakse → VangTao → Ubon Ratchathani → Pakse</div>
+        <div class="meals">
+          <span class="meal">🥐 Buffet sáng</span>
+          <span class="meal">🍜 Cơm trưa</span>
+          <span class="meal">🍽️ Cơm tối</span>
+        </div>
+        <ul class="acts">
+          <li>Buffet sáng tại KS, qua cửa khẩu VangTao sang Ubon Ratchathani</li>
+          <li><strong>Chùa Wat Tai Phra Chao Yai Ong Tue</strong> – Chùa Liên Hợp Quốc</li>
+          <li><strong>Chùa Phra That Nong Bua</strong> – tác phẩm Phật giáo bằng sáp nổi tiếng</li>
+          <li>Khu Giò – Phố ẩm thực người Việt tại Ubon</li>
+          <li><strong>Wat Sirindhorn Wararam Phurao</strong> – Chùa huỳnh quang trên núi</li>
+          <li>Mua sắm Big C / Central World, về Pakse nghỉ đêm</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="day-card">
+      <div class="day-num"><span class="lbl">Ngày</span><span class="n">3</span></div>
+      <div class="day-body">
+        <img class="day-banner"
+             src="https://vietkite.com.vn/wp-content/uploads/2024/12/wat-phou-lao-unesco.jpg"
+             onerror="this.src='https://www.visitsoutheastasia.travel/wp-content/uploads/2019/10/Lao-PDR-WAT-PHOU.jpg'"
+             alt="Ngày 3 Wat Phou">
+        <div class="day-title">PAKSE – WAT PHOU – CAO NGUYÊN BOLAVEN</div>
+        <div class="day-route">Pakse → Chợ Dao Hueng → Wat Phou → Bolaven</div>
+        <div class="meals">
+          <span class="meal">🥐 Buffet sáng</span>
+          <span class="meal">🍜 Cơm trưa bờ Mê Kông</span>
+          <span class="meal">🍽️ Cơm tối</span>
+        </div>
+        <ul class="acts">
+          <li>Mua sắm tại <strong>Chợ Dao Hueng</strong> nổi tiếng</li>
+          <li><strong>Wat Phou</strong> – Di sản UNESCO, kiến trúc Khmer thế kỷ VI</li>
+          <li>Cơm trưa nhà hàng cạnh bờ sông Mê Kông thơ mộng</li>
+          <li><strong>Thác Tad Fane</strong> – Thác đôi hùng vĩ, zipline, leo núi</li>
+          <li><strong>Thác Nhương (Tad Yuang)</strong> – Vẻ đẹp hạ nguồn Mekong</li>
+          <li><strong>Phusalau</strong> – Chùa trên núi, ngắm toàn cảnh Pakse</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="day-card">
+      <div class="day-num"><span class="lbl">Ngày</span><span class="n">4</span></div>
+      <div class="day-body">
+        <img class="day-banner"
+             src="https://images.trvl-media.com/place/2815/dd7a1c5d-8836-41a9-973b-11f19a4a4f09.jpg"
+             onerror="this.src='https://images.trvl-media.com/place/2815/dd7a1c5d-8836-41a9-973b-11f19a4a4f09.jpg'"
+             alt="Ngày 4 về">
+        <div class="day-title">PAKSE → CAMPUCHIA → VIỆT NAM</div>
+        <div class="day-route">Pakse → Domcrolo & Vuenkham → HCM</div>
+        <div class="meals">
+          <span class="meal">🥐 Ăn sáng KS</span>
+          <span class="meal">🍜 Cơm trưa Stungtreng</span>
+        </div>
+        <ul class="acts">
+          <li>Ăn sáng, trả phòng, khởi hành về Campuchia qua cửa khẩu Domcrolo & Vuenkham</li>
+          <li>Cơm trưa tại Stungtreng / Kratier</li>
+          <li>🕗 19h00 – Về đến TP.HCM, kết thúc hành trình đáng nhớ!</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="pricing" id="pricing">
+  <div class="sec-head c">
+    <span class="sec-label" style="color:#FFD166">Giá Tour</span>
+    <h2 class="sec-title" id="banggia">Bảng Giá Rõ Ràng – Không Phí Ẩn</h2>
+    <p class="sec-sub">Tất cả chi phí đã bao gồm trong giá tour.</p>
+  </div>
+  <div class="price-grid">
+    <div class="pc">
+      <h3>👶 Trẻ em dưới 2 tuổi</h3>
+      <div class="amt">2,487,000₫</div>
+      <p class="note">30% giá người lớn • Ngủ chung giường</p>
+    </div>
+    <div class="pc feat">
+      <div class="feat-badge">🌟 Phổ biến nhất</div>
+      <h3>🧑 Người lớn</h3>
+      <div class="amt">8,290,000₫</div>
+      <p class="note" style="color:var(--muted)">Giá thường • Khởi hành hàng tuần</p>
+      <ul>
+        <li>Xe đi thẳng VN → Campuchia → Lào</li>
+        <li>Khách sạn 4★ (2 khách/phòng)</li>
+        <li>10 bữa ăn theo chương trình</li>
+        <li>Vé tham quan tất cả điểm</li>
+        <li>HDV tiếng Việt xuyên suốt</li>
+        <li>Bảo hiểm 200 triệu/khách</li>
+        <li>Quà tặng + Khăn ướt</li>
+      </ul>
+    </div>
+    <div class="pc">
+      <h3>🧒 Trẻ em 2–11 tuổi</h3>
+      <div class="amt">6,217,500₫</div>
+      <p class="note">75% giá người lớn • Ngủ chung giường</p>
+    </div>
+  </div>
+  <div class="holiday-note">
+    <p>🎉 Ngày lễ đặc biệt (30/4 · Giỗ Tổ · Tết Lào): <strong>8,990,000₫</strong>/người lớn</p>
+  </div>
+</section>
+
+<section class="sched" id="schedule">
+  <div class="sec-head c">
+    <span class="sec-label">Lịch Khởi Hành</span>
+    <h2 class="sec-title" id="lichkhoihanh">Ngày Khởi Hành 2025–2026</h2>
+  </div>
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th>Tháng</th><th>Ngày khởi hành</th><th>Người lớn</th><th>Trẻ 2–11T</th><th>Trẻ &lt;2T</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Tháng 3</td><td>12, 19, 26</td><td>8,290,000 ₫</td><td>6,217,500 ₫</td><td>2,487,000 ₫</td></tr>
+        <tr><td>Tháng 4</td><td>02, 16</td><td>8,290,000 ₫</td><td>6,217,500 ₫</td><td>2,487,000 ₫</td></tr>
+        <tr><td>Tháng 4</td><td>10/4 <span class="hol">Tết Lào</span></td><td>8,290,000 ₫</td><td>6,217,500 ₫</td><td>2,487,000 ₫</td></tr>
+        <tr><td>Tháng 4</td><td>24/4 <span class="hol">Giỗ Tổ</span></td><td>8,990,000 ₫</td><td>6,742,500 ₫</td><td>2,697,000 ₫</td></tr>
+        <tr><td>Tháng 4</td><td>30/4 <span class="hol">Lễ 30/4</span></td><td>8,990,000 ₫</td><td>6,742,500 ₫</td><td>2,697,000 ₫</td></tr>
+        <tr><td>Tháng 5</td><td>07, 14, 21, 28</td><td>8,290,000 ₫</td><td>6,217,500 ₫</td><td>2,487,000 ₫</td></tr>
+        <tr><td>Tháng 6–8</td><td>Mỗi thứ Tư hàng tuần</td><td>8,290,000 ₫</td><td>6,217,500 ₫</td><td>2,487,000 ₫</td></tr>
+        <tr><td>Tháng 9–12</td><td>Mỗi thứ Tư hàng tuần</td><td>8,290,000 ₫</td><td>6,217,500 ₫</td><td>2,487,000 ₫</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="svc" id="services">
+  <div class="sec-head c">
+    <span class="sec-label">Dịch vụ</span>
+    <h2 class="sec-title" id="baogom">Bao gồm & Không bao gồm</h2>
+  </div>
+  <div class="svc-grid">
+    <div class="svc-block">
+      <img class="svc-img"
+           src="https://vietkite.com.vn/wp-content/uploads/2024/12/tour-du-lich-lao-tu-tphcm.jpg"
+           onerror="this.src='https://dulichphuonghoang.vn/upload/images/Luang-Prabang.png'"
+           alt="Đoàn tour VietKite tại Lào">
+      <h3 style="color:var(--green)">✅ Giá tour bao gồm</h3>
+      <ul class="inc">
+        <li>Xe đi thẳng VN → Campuchia → Lào (đến Thái đổi xe Thái)</li>
+        <li>Khách sạn 4★ (2 khách/phòng; lẻ nam/nữ ngủ phòng 3)</li>
+        <li>3 buffet sáng KS + 7 bữa ăn chính theo chương trình</li>
+        <li>Vé vào cửa tất cả điểm tham quan trong tour</li>
+        <li>Hướng dẫn viên tiếng Việt đón ngay tại Việt Nam</li>
+        <li>Quà tặng công ty + Khăn ướt</li>
+        <li>Bảo hiểm du lịch tối đa <strong>200,000,000 ₫/khách</strong></li>
+      </ul>
+    </div>
+    <div class="svc-block">
+      <img class="svc-img"
+           src="https://vietkite.com.vn/wp-content/uploads/2024/12/pakse-song-mekong-lao.jpg"
+           onerror="this.src='https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=700&q=80'"
+           alt="Pakse Mê Kông">
+      <h3 style="color:#c44108">❌ Không bao gồm</h3>
+      <ul class="exc">
+        <li>Tip HDV & tài xế: 5 USD/khách/ngày × 4 ngày = <strong>20 USD</strong></li>
+        <li>Visa Lào: 40 USD/lần (nếu cần)</li>
+        <li>Visa Cambodia: 40 USD/lần (nếu cần)</li>
+        <li>Chi phí cá nhân: thuốc men, đồ uống ngoài bữa ăn</li>
+        <li>Chi phí phát sinh do bất khả kháng</li>
+      </ul>
+      <div class="pay-box">
+        <p>📌 Quy trình thanh toán</p>
+        <span>Đặt cọc <strong>50%</strong> trước 10 ngày · Thanh toán còn lại trước <strong>7 ngày</strong> · Hộ chiếu còn hạn 6+ tháng</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="reviews" id="reviews">
+  <div class="sec-head c">
+    <span class="sec-label">Đánh giá</span>
+    <h2 class="sec-title" id="khachhang">Khách hàng nói gì về VietKite?</h2>
+  </div>
+  <div class="rev-grid">
+
+    <div class="rev-card">
+      <div class="rev-stars">★★★★★</div>
+      <p class="rev-text">"Chuyến đi tuyệt vời! HDV nhiệt tình, lịch trình hợp lý, khách sạn sạch đẹp. Thác Khone Phapheng thực sự choáng ngợp, xứng đáng 5 sao!"</p>
+      <div class="rev-author">
+        <img class="rev-avatar"
+             src="https://vietkite.com.vn/wp-content/uploads/2024/12/khach-hang-vietkite-1.jpg"
+             onerror="this.src='https://ui-avatars.com/api/?name=Nguyen+Van+A&background=E8510A&color=fff&size=44'"
+             alt="Nguyễn Văn A">
+        <div><div class="rev-name">Nguyễn Văn A</div><div class="rev-loc">TP.HCM · Tháng 3/2025</div></div>
+      </div>
+    </div>
+
+    <div class="rev-card">
+      <div class="rev-stars">★★★★★</div>
+      <p class="rev-text">"Wat Phou đẹp không kém Angkor Wat. VietKite tổ chức rất chuyên nghiệp, xe thoải mái, đồ ăn ngon. Sẽ đi tiếp tour Nhật với VietKite!"</p>
+      <div class="rev-author">
+        <img class="rev-avatar"
+             src="https://vietkite.com.vn/wp-content/uploads/2024/12/khach-hang-vietkite-2.jpg"
+             onerror="this.src='https://ui-avatars.com/api/?name=Tran+Thi+B&background=1A7D3C&color=fff&size=44'"
+             alt="Trần Thị B">
+        <div><div class="rev-name">Trần Thị B</div><div class="rev-loc">Bình Dương · Tháng 4/2025</div></div>
+      </div>
+    </div>
+
+    <div class="rev-card">
+      <div class="rev-stars">★★★★★</div>
+      <p class="rev-text">"Chùa huỳnh quang ở Thái Lan đẹp như trong mơ! Cả đoàn đều hài lòng. Giá hợp lý, dịch vụ tốt. Cảm ơn VietKite đã tạo nên chuyến đi hoàn hảo!"</p>
+      <div class="rev-author">
+        <img class="rev-avatar"
+             src="https://vietkite.com.vn/wp-content/uploads/2024/12/khach-hang-vietkite-3.jpg"
+             onerror="this.src='https://ui-avatars.com/api/?name=Le+Van+C&background=F5A623&color=fff&size=44'"
+             alt="Lê Văn C">
+        <div><div class="rev-name">Lê Văn C</div><div class="rev-loc">Đồng Nai · Tháng 5/2025</div></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="booking" id="booking">
+  <div class="sec-head c">
+    <span class="sec-label" style="color:rgba(255,255,255,.7)">Thiết kế riêng</span>
+    <h2 class="sec-title" id="dattour">Lên Kế Hoạch Cho Chuyến Đi Hoàn Hảo</h2>
+    <p class="sec-sub">VietKite luôn sẵn sàng đồng hành tạo dựng hành trình dành riêng cho doanh nghiệp & gia đình bạn.</p>
+  </div>
+  <div class="bk-form" style="padding:0; overflow:hidden; max-width:740px; border-radius:16px;">
+    
+    <div style="background:var(--green); color:#white; padding:24px 32px; position:relative;">
+      <h3 style="font-family:'Be Vietnam Pro',sans-serif; font-size:24px; font-weight:800; color:#fff; margin-bottom:4px;">Thiết kế tour riêng</h3>
+      <p style="font-size:13.5px; color:rgba(255,255,255,0.9); font-weight:500;">Tư vấn miễn phí · Báo giá trong ngày · Hỗ trợ 24/7</p>
+      <button style="position:absolute; right:24px; top:50%; transform:translateY(-50%); background:rgba(255,255,255,0.15); border:none; color:#fff; width:30px; height:30px; border-radius:50%; font-size:14px; cursor:pointer; display:flex; align-items:center; justify-content:center;" aria-label="Close">✕</button>
+    </div>
+
+    <form style="padding:32px;" onsubmit="event.preventDefault(); submitForm();">
+      
+      <div class="bk-form-custom-title">👤 Thông tin liên hệ</div>
+      <div class="form-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px;">
+        <div class="form-item" style="display:flex; flex-direction:column; gap:6px;">
+          <label>HỌ VÀ TÊN *</label>
+          <input type="text" id="bk-name" placeholder="Nguyễn Văn A" required>
+        </div>
+        <div class="form-item" style="display:flex; flex-direction:column; gap:6px;">
+          <label>SỐ ĐIỆN THOẠI *</label>
+          <input type="tel" id="bk-phone" placeholder="0914 xxx xxx" required>
+        </div>
+        <div class="form-item" style="display:flex; flex-direction:column; gap:6px;">
+          <label>EMAIL</label>
+          <input type="email" id="bk-email" placeholder="email@cty.vn">
+        </div>
+        <div class="form-item" style="display:flex; flex-direction:column; gap:6px;">
+          <label>CÔNG TY / ĐƠN VỊ</label>
+          <input type="text" id="bk-company" placeholder="Tên công ty">
+        </div>
+      </div>
+
+      <div class="bk-form-custom-title">👥 Thông tin đoàn</div>
+      <div class="form-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px;">
+        <div class="form-item" style="display:flex; flex-direction:column; gap:6px;">
+          <label>LOẠI NHÓM</label>
+          <select id="bk-group-type">
+            <option value="">Chọn loại nhóm</option>
+            <option>Doanh nghiệp / Công ty</option>
+            <option>Gia đình / Người thân</option>
+            <option>Hội nhóm bạn bè</option>
+            <option>Cá nhân / Cặp đôi</option>
+          </select>
+        </div>
+        <div class="form-item" style="display:flex; flex-direction:column; gap:6px;">
+          <label>SỐ LƯỢNG NGƯỜI *</label>
+          <input type="number" id="bk-guests" placeholder="Ví dụ: 50" min="1" required>
+        </div>
+        <div class="form-item" style="display:flex; flex-direction:column; gap:6px;">
+          <label>ĐIỂM ĐẾN MONG MUỐN</label>
+          <input type="text" id="bk-destination" placeholder="Phú Quốc, Đà Nẵng...">
+        </div>
+        <div class="form-item" style="display:flex; flex-direction:column; gap:6px;">
+          <label>NGÀY KHỞI HÀNH DỰ KIẾN</label>
+          <input type="date" id="bk-date">
+        </div>
+        <div class="form-item" style="display:flex; flex-direction:column; gap:6px;">
+          <label>THỜI GIAN TOUR</label>
+          <select id="bk-duration">
+            <option value="">Chọn độ dài</option>
+            <option>2 Ngày 1 Đêm</option>
+            <option>3 Ngày 2 Đêm</option>
+            <option>4 Ngày 3 Đêm</option>
+            <option>Dài hơn</option>
+          </select>
+        </div>
+        <div class="form-item" style="display:flex; flex-direction:column; gap:6px;">
+          <label>NGÂN SÁCH (VNĐ/NGƯỜI)</label>
+          <select id="bk-budget">
+            <option value="">Chọn ngân sách</option>
+            <option>Dưới 5 triệu</option>
+            <option>5 – 10 triệu</option>
+            <option>10 – 20 triệu</option>
+            <option>Trên 20 triệu</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="bk-form-custom-title">🧩 Loại hình quan tâm</div>
+      <div class="interest-group">
+        <label class="interest-tag"><input type="checkbox" name="interest" value="Nghỉ dưỡng"> <span>🏖️ NGHỈ DƯỠNG</span></label>
+        <label class="interest-tag"><input type="checkbox" name="interest" value="Phiêu lưu"> <span>🏕️ PHIÊU LƯU</span></label>
+        <label class="interest-tag"><input type="checkbox" name="interest" value="Văn hóa"> <span>🏛️ VĂN HÓA</span></label>
+        <label class="interest-tag"><input type="checkbox" name="interest" value="Mua sắm"> <span>🛍️ MUA SẮM</span></label>
+        <label class="interest-tag"><input type="checkbox" name="interest" value="Teambuilding"> <span>🎯 TEAMBUILDING</span></label>
+        <label class="interest-tag"><input type="checkbox" name="interest" value="Gala Dinner"> <span>🍾 GALA DINNER</span></label>
+        <label class="interest-tag"><input type="checkbox" name="interest" value="Thiện nguyện"> <span>💖 THIỆN NGUYỆN</span></label>
+      </div>
+
+      <div class="bk-form-custom-title">📝 Ghi chú thêm</div>
+      <div style="margin-bottom:24px;">
+        <textarea id="bk-notes" rows="3" placeholder="Yêu cầu đặc biệt, sở thích ăn uống, cần hướng dẫn viên ngoại ngữ..." style="width:100%; box-sizing:border-box;"></textarea>
+      </div>
+
+      <button type="submit" class="submit-custom-btn" id="btn-submit-booking">Gửi yêu cầu thiết kế tour →</button>
+      <p style="text-align:center; margin-top:14px; font-size:13px; color:var(--muted); font-weight:500;">Chúng tôi sẽ phản hồi trong vòng 24 giờ làm việc</p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="ft-grid">
+    <div class="ft-brand">
+      <img src="https://vietkite.com.vn/wp-content/uploads/2024/12/logo-cty-canh-dieu-viet-vietkite.jpg" alt="logo">
+      <p>VietKite Travel – Chuyên tổ chức tour du lịch quốc tế chuyên nghiệp, uy tín hơn 15 năm. Hành trình của bạn, niềm vui của chúng tôi.</p>
+      <div class="socials" style="margin-top:16px">
+        <a href="https://www.facebook.com/vietkite" title="Facebook" id="footer-fb">f</a>
+        <a href="tel:0123456789" title="Hotline" id="footer-hotline">📞</a>
+        <a href="mailto:info@vietkite.com.vn" title="Email" id="footer-email">@</a>
+      </div>
+    </div>
+    <div class="ft-col">
+      <h4>Tour châu Á</h4>
+      <ul>
+        <li><a href="https://vietkite.com.vn/nhom_tour/tour-du-lich-lao.html">Tour Lào</a></li>
+        <li><a href="https://vietkite.com.vn/nhom_tour/thailand.html">Tour Thái Lan</a></li>
+        <li><a href="https://vietkite.com.vn/nhom_tour/cambodia-myanmar.html">Cambodia – Myanmar</a></li>
+        <li><a href="https://vietkite.com.vn/nhom_tour/han-quoc.html">Hàn Quốc</a></li>
+        <li><a href="https://vietkite.com.vn/nhom_tour/nhat-ban.html">Nhật Bản</a></li>
+      </ul>
+    </div>
+    <div class="ft-col">
+      <h4>Khám phá thêm</h4>
+      <ul>
+        <li><a href="https://vietkite.com.vn/nhom_tour/tour-kham-pha.html">Tour khám phá</a></li>
+        <li><a href="https://vietkite.com.vn/nhom_tour/tour-thien-nguyen.html">Tour thiện nguyện</a></li>
+        <li><a href="https://vietkite.com.vn/nhom_tour/khuyen-mai.html">Khuyến mãi</a></li>
+        <li><a href="https://vietkite.com.vn/nhom_tour/lien-tuyen-chau-au.html">Tour châu Âu</a></li>
+      </ul>
+    </div>
+    <div class="ft-col">
+      <h4>Liên hệ</h4>
+<div class="ft-contact">
+  <strong>CÔNG TY TNHH THƯƠNG MẠI DỊCH VỤ DU LỊCH VIETKITE</strong><br>
+  🆔 <strong>MST:</strong> 0311304593<br>
+  🌐 <a href="https://vietkite.com.vn">vietkite.com.vn</a><br>
+  ✉️ <a href="mailto:info@vietkite.com.vn">info@vietkite.com.vn</a><br>
+  📍 <strong>VP 1:</strong> 276 Nơ Trang Long, P. 12, Q. Bình Thạnh, TP.HCM<br>
+  📍 <strong>VP 2:</strong> 160/25/31 Bùi Đình Túy, P. 12, Q. Bình Thạnh, TP.HCM<br>
+  🕐 T2–CN: 8:00 – 20:00
+</div>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <span>© 2026 VietKite Travel. GP LHQT: xxxx/2010/TCDL-GP LHQT</span>
+    <span>Thiết kế dành riêng cho VietKite ♥</span>
+  </div>
+</footer>
+
+<script>
+function toggleMob(){document.getElementById("mobMenu").classList.toggle("open")}
+document.addEventListener("click",function(e){
+  const m=document.getElementById("mobMenu"),n=document.querySelector("nav");
+  if(!n.contains(e.target))m.classList.remove("open");
+});
+
+function submitForm(){
+  const name=document.getElementById("bk-name").value;
+  const phone=document.getElementById("bk-phone").value;
+  const dest=document.getElementById("bk-destination").value || "điểm mong muốn";
+  if(!name||!phone){alert("Vui lòng điền đầy đủ thông tin bắt buộc: Họ tên và Số điện thoại!");return}
+  alert("🎉 Cảm ơn "+name+"! VietKite đã nhận được yêu cầu thiết kế tour riêng đi "+dest+". Chúng tôi sẽ liên hệ qua SĐT "+phone+" trong vòng 24 giờ làm việc để báo giá chi tiết. Chúc đoàn của bạn có một kỳ nghỉ tuyệt vời!");
+}
+
+window.addEventListener("scroll",function(){
+  document.querySelector("nav").style.boxShadow=window.scrollY>40?"0 4px 24px rgba(0,0,0,.1)":"none";
+});
+
+// Hàm hỗ trợ tính toán cuộn mượt có trừ đi độ cao của thanh Nav cố định
+function scrollToTarget(target) {
+  if (!target) return;
+  const navH = document.querySelector("nav").offsetHeight;
+  const top = target.getBoundingClientRect().top + window.scrollY - navH;
+  window.scrollTo({top: top, behavior: "smooth"});
+}
+
+// Smooth scroll khi CLICK vào các link trong trang
+document.addEventListener("click",function(e){
+  const link = e.target.closest("a[href^='#']");
+  if(!link) return;
+  const id = link.getAttribute("href").slice(1);
+  const target = document.getElementById(id);
+  if(!target) return;
+  e.preventDefault();
+  scrollToTarget(target);
+  document.getElementById("mobMenu").classList.remove("open");
+});
+
+// TỰ ĐỘNG SCROLL khi người dùng truy cập thẳng từ URL có chứa dấu hash (ví dụ: ve-may-bay.html#hinhanh)
+window.addEventListener("DOMContentLoaded", function() {
+  if (window.location.hash) {
+    // Chờ 300ms để trình duyệt render xong giao diện rồi mới tính toán cuộn chính xác
+    setTimeout(function() {
+      const id = window.location.hash.slice(1);
+      const target = document.getElementById(id);
+      if (target) {
+        scrollToTarget(target);
+      }
+    }, 300);
+  }
+});
+</script>
+</body>
+</html>
