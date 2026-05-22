@@ -1154,7 +1154,7 @@ function submitCTForm(){
     ghi_chu:document.getElementById("ct-note").value.trim()
   };
 
-  fetch(https://script.google.com/macros/s/AKfycbyQVjaKOz1KmYepN_O00ppqaB2JZNr635d_Ak7qvA4HtLuTrt4sw1AGnHf4I9up4Q83eg/exec,{method:"POST",mode:"no-cors",headers:{"Content-Type":"application/json"},body:JSON.stringify(data)})
+  fetch(GAS_URL,{method:"POST",mode:"no-cors",headers:{"Content-Type":"application/json"},body:JSON.stringify(data)})
   .then(function(){showCTSuccess()})
   .catch(function(){showCTSuccess()});
 }
