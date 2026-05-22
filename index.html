@@ -288,7 +288,7 @@ tr:hover td{background:rgba(232,81,10,.04)}
 .pay-box span{font-size:14.5px;line-height:1.75}
 
 /* ============================================================
-   BOOKING & NEW PRIVATE TOUR FORM STYLES
+   BOOKING
 ============================================================ */
 .booking{
   background:url("https://vietkite.com.vn/wp-content/uploads/2024/12/tour-du-lich-lao-tu-tphcm.jpg") center/cover no-repeat;
@@ -320,77 +320,6 @@ input:focus,select:focus,textarea:focus{border-color:var(--orange);background:#f
 .submit:hover{background:#c44108;transform:translateY(-2px);box-shadow:0 6px 24px rgba(232,81,10,.4)}
 .hotline-note{text-align:center;margin-top:12px;font-size:13px;color:var(--muted)}
 .hotline-note a{color:var(--orange);font-weight:800}
-
-/* CSS bổ sung thiết kế chuẩn theo hình ảnh mẫu */
-.bk-form-custom-title {
-  font-size: 13px;
-  font-weight: 800;
-  color: var(--green);
-  letter-spacing: 0.5px;
-  margin: 24px 0 14px;
-  text-transform: uppercase;
-}
-.bk-form-custom-title:first-of-type {
-  margin-top: 0;
-}
-.interest-group {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 22px;
-}
-.interest-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: #fff;
-  padding: 8px 14px;
-  border-radius: 8px;
-  font-size: 12.5px;
-  font-weight: 700;
-  color: var(--dark);
-  cursor: pointer;
-  border: 1.5px solid #e5e7eb;
-  transition: all 0.2s;
-  user-select: none;
-}
-.interest-tag input {
-  margin: 0;
-  width: 15px;
-  height: 15px;
-  accent-color: var(--green);
-  cursor: pointer;
-}
-.interest-tag:hover {
-  background: #fdfdfd;
-  border-color: #cbd5e1;
-}
-.interest-tag input:checked + span {
-  color: var(--green);
-}
-.interest-tag:has(input:checked) {
-  background: rgba(26, 125, 60, 0.06);
-  border-color: var(--green);
-}
-.submit-custom-btn {
-  width: 100%;
-  background: var(--green);
-  color: #fff;
-  padding: 15px;
-  border-radius: 10px;
-  font-size: 16px;
-  font-weight: 800;
-  border: none;
-  cursor: pointer;
-  font-family: "Be Vietnam Pro",sans-serif;
-  transition: all 0.2s;
-  box-shadow: 0 4px 16px rgba(26,125,60,0.2);
-}
-.submit-custom-btn:hover {
-  background: #135d2c;
-  transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(26,125,60,0.3);
-}
 
 /* ============================================================
    TESTIMONIALS
@@ -875,105 +804,31 @@ footer{background:#0d1f13;color:rgba(255,255,255,.75);padding:56px clamp(16px,5v
 
 <section class="booking" id="booking">
   <div class="sec-head c">
-    <span class="sec-label" style="color:rgba(255,255,255,.7)">Thiết kế riêng</span>
-    <h2 class="sec-title" id="dattour">Lên Kế Hoạch Cho Chuyến Đi Hoàn Hảo</h2>
-    <p class="sec-sub">VietKite luôn sẵn sàng đồng hành tạo dựng hành trình dành riêng cho doanh nghiệp & gia đình bạn.</p>
+    <span class="sec-label" style="color:rgba(255,255,255,.7)">Đặt tour</span>
+    <h2 class="sec-title" id="dattour">Đăng Ký Ngay Hôm Hôm Ngày!</h2>
+    <p class="sec-sub">VietKite sẽ liên hệ trong vòng 30 phút để xác nhận.</p>
   </div>
-  <div class="bk-form" style="padding:0; overflow:hidden; max-width:740px; border-radius:16px;">
-    
-    <div style="background:var(--green); color:#white; padding:24px 32px; position:relative;">
-      <h3 style="font-family:'Be Vietnam Pro',sans-serif; font-size:24px; font-weight:800; color:#fff; margin-bottom:4px;">Thiết kế tour riêng</h3>
-      <p style="font-size:13.5px; color:rgba(255,255,255,0.9); font-weight:500;">Tư vấn miễn phí · Báo giá trong ngày · Hỗ trợ 24/7</p>
-      <button style="position:absolute; right:24px; top:50%; transform:translateY(-50%); background:rgba(255,255,255,0.15); border:none; color:#fff; width:30px; height:30px; border-radius:50%; font-size:14px; cursor:pointer; display:flex; align-items:center; justify-content:center;" aria-label="Close">✕</button>
+  <div class="bk-form">
+    <div class="fg">
+      <div class="fi"><label>Họ và tên</label><input type="text" placeholder="Nguyễn Văn A"></div>
+      <div class="fi"><label>Số điện thoại</label><input type="tel" placeholder="0901 234 567"></div>
+      <div class="fi"><label>Email</label><input type="email" placeholder="email@example.com"></div>
+      <div class="fi"><label>Ngày khởi hành</label>
+        <select>
+          <option value="">-- Chọn ngày --</option>
+          <option>12/03/2026</option><option>19/03/2026</option><option>26/03/2026</option>
+          <option>02/04/2026</option><option>10/04/2026 (Tết Lào)</option>
+          <option>16/04/2026</option><option>24/04/2026 (Giỗ Tổ)</option>
+          <option>30/04/2026 (Lễ 30/4)</option>
+          <option>07/05/2026</option><option>14/05/2026</option><option>21/05/2026</option>
+        </select>
+      </div>
+      <div class="fi"><label>Số người lớn</label><input type="number" min="1" value="2"></div>
+      <div class="fi"><label>Số trẻ em</label><input type="number" min="0" value="0"></div>
+      <div class="fi full"><label>Ghi chú</label><textarea rows="3" placeholder="Yêu cầu đặc biệt, phòng riêng, chế độ ăn..."></textarea></div>
     </div>
-
-    <form style="padding:32px;" onsubmit="event.preventDefault(); submitForm();">
-      
-      <div class="bk-form-custom-title">👤 Thông tin liên hệ</div>
-      <div class="form-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px;">
-        <div class="form-item" style="display:flex; flex-direction:column; gap:6px;">
-          <label>HỌ VÀ TÊN *</label>
-          <input type="text" id="bk-name" placeholder="Nguyễn Văn A" required>
-        </div>
-        <div class="form-item" style="display:flex; flex-direction:column; gap:6px;">
-          <label>SỐ ĐIỆN THOẠI *</label>
-          <input type="tel" id="bk-phone" placeholder="0914 xxx xxx" required>
-        </div>
-        <div class="form-item" style="display:flex; flex-direction:column; gap:6px;">
-          <label>EMAIL</label>
-          <input type="email" id="bk-email" placeholder="email@cty.vn">
-        </div>
-        <div class="form-item" style="display:flex; flex-direction:column; gap:6px;">
-          <label>CÔNG TY / ĐƠN VỊ</label>
-          <input type="text" id="bk-company" placeholder="Tên công ty">
-        </div>
-      </div>
-
-      <div class="bk-form-custom-title">👥 Thông tin đoàn</div>
-      <div class="form-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px;">
-        <div class="form-item" style="display:flex; flex-direction:column; gap:6px;">
-          <label>LOẠI NHÓM</label>
-          <select id="bk-group-type">
-            <option value="">Chọn loại nhóm</option>
-            <option>Doanh nghiệp / Công ty</option>
-            <option>Gia đình / Người thân</option>
-            <option>Hội nhóm bạn bè</option>
-            <option>Cá nhân / Cặp đôi</option>
-          </select>
-        </div>
-        <div class="form-item" style="display:flex; flex-direction:column; gap:6px;">
-          <label>SỐ LƯỢNG NGƯỜI *</label>
-          <input type="number" id="bk-guests" placeholder="Ví dụ: 50" min="1" required>
-        </div>
-        <div class="form-item" style="display:flex; flex-direction:column; gap:6px;">
-          <label>ĐIỂM ĐẾN MONG MUỐN</label>
-          <input type="text" id="bk-destination" placeholder="Phú Quốc, Đà Nẵng...">
-        </div>
-        <div class="form-item" style="display:flex; flex-direction:column; gap:6px;">
-          <label>NGÀY KHỞI HÀNH DỰ KIẾN</label>
-          <input type="date" id="bk-date">
-        </div>
-        <div class="form-item" style="display:flex; flex-direction:column; gap:6px;">
-          <label>THỜI GIAN TOUR</label>
-          <select id="bk-duration">
-            <option value="">Chọn độ dài</option>
-            <option>2 Ngày 1 Đêm</option>
-            <option>3 Ngày 2 Đêm</option>
-            <option>4 Ngày 3 Đêm</option>
-            <option>Dài hơn</option>
-          </select>
-        </div>
-        <div class="form-item" style="display:flex; flex-direction:column; gap:6px;">
-          <label>NGÂN SÁCH (VNĐ/NGƯỜI)</label>
-          <select id="bk-budget">
-            <option value="">Chọn ngân sách</option>
-            <option>Dưới 5 triệu</option>
-            <option>5 – 10 triệu</option>
-            <option>10 – 20 triệu</option>
-            <option>Trên 20 triệu</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="bk-form-custom-title">🧩 Loại hình quan tâm</div>
-      <div class="interest-group">
-        <label class="interest-tag"><input type="checkbox" name="interest" value="Nghỉ dưỡng"> <span>🏖️ NGHỈ DƯỠNG</span></label>
-        <label class="interest-tag"><input type="checkbox" name="interest" value="Phiêu lưu"> <span>🏕️ PHIÊU LƯU</span></label>
-        <label class="interest-tag"><input type="checkbox" name="interest" value="Văn hóa"> <span>🏛️ VĂN HÓA</span></label>
-        <label class="interest-tag"><input type="checkbox" name="interest" value="Mua sắm"> <span>🛍️ MUA SẮM</span></label>
-        <label class="interest-tag"><input type="checkbox" name="interest" value="Teambuilding"> <span>🎯 TEAMBUILDING</span></label>
-        <label class="interest-tag"><input type="checkbox" name="interest" value="Gala Dinner"> <span>🍾 GALA DINNER</span></label>
-        <label class="interest-tag"><input type="checkbox" name="interest" value="Thiện nguyện"> <span>💖 THIỆN NGUYỆN</span></label>
-      </div>
-
-      <div class="bk-form-custom-title">📝 Ghi chú thêm</div>
-      <div style="margin-bottom:24px;">
-        <textarea id="bk-notes" rows="3" placeholder="Yêu cầu đặc biệt, sở thích ăn uống, cần hướng dẫn viên ngoại ngữ..." style="width:100%; box-sizing:border-box;"></textarea>
-      </div>
-
-      <button type="submit" class="submit-custom-btn" id="btn-submit-booking">Gửi yêu cầu thiết kế tour →</button>
-      <p style="text-align:center; margin-top:14px; font-size:13px; color:var(--muted); font-weight:500;">Chúng tôi sẽ phản hồi trong vòng 24 giờ làm việc</p>
-    </form>
+    <button class="submit" id="btn-submit-booking" onclick="submitForm()">🚀 Gửi Yêu Cầu Đặt Tour</button>
+    <p class="hotline-note">📞 Hotline: <a href="tel:0123456789" id="link-hotline">0123 456 789</a> – Tư vấn 24/7</p>
   </div>
 </section>
 
@@ -1032,15 +887,13 @@ document.addEventListener("click",function(e){
   const m=document.getElementById("mobMenu"),n=document.querySelector("nav");
   if(!n.contains(e.target))m.classList.remove("open");
 });
-
 function submitForm(){
-  const name=document.getElementById("bk-name").value;
-  const phone=document.getElementById("bk-phone").value;
-  const dest=document.getElementById("bk-destination").value || "điểm mong muốn";
-  if(!name||!phone){alert("Vui lòng điền đầy đủ thông tin bắt buộc: Họ tên và Số điện thoại!");return}
-  alert("🎉 Cảm ơn "+name+"! VietKite đã nhận được yêu cầu thiết kế tour riêng đi "+dest+". Chúng tôi sẽ liên hệ qua SĐT "+phone+" trong vòng 24 giờ làm việc để báo giá chi tiết. Chúc đoàn của bạn có một kỳ nghỉ tuyệt vời!");
+  const name=document.querySelector(".bk-form input[type=text]").value;
+  const phone=document.querySelector(".bk-form input[type=tel]").value;
+  const date=document.querySelector(".bk-form select").value;
+  if(!name||!phone||!date){alert("Vui lòng điền đầy đủ: Họ tên, Số điện thoại và Ngày khởi hành!");return}
+  alert("🎉 Cảm ơn "+name+"! VietKite sẽ liên hệ SĐT "+phone+" trong 30 phút để xác nhận tour ngày "+date+". Chúc bạn có chuyến đi tuyệt vời!");
 }
-
 window.addEventListener("scroll",function(){
   document.querySelector("nav").style.boxShadow=window.scrollY>40?"0 4px 24px rgba(0,0,0,.1)":"none";
 });
