@@ -55,6 +55,48 @@ nav{
 }
 .mob-menu a:hover{color:var(--orange)}
 
+/* ── DROPDOWN ── */
+.nav-dropdown{position:relative}
+.nav-dropdown>a{display:flex;align-items:center;gap:5px}
+.nav-dropdown>a::after{content:"▾";font-size:10px;opacity:.6;transition:transform .2s}
+.nav-dropdown:hover>a::after{transform:rotate(-180deg)}
+.dropdown-menu{
+  display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);
+  background:transparent;
+  min-width:300px;padding-top:12px;z-index:2000;
+}
+.dropdown-inner{
+  background:#fff;border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,.13);
+  border:1.5px solid rgba(0,0,0,.06);padding:8px 0;overflow:hidden;
+}
+.nav-dropdown:hover .dropdown-menu{display:block}
+.dropdown-menu a{
+  display:block;padding:11px 20px;font-size:13px;font-weight:700;
+  color:var(--dark);white-space:normal;line-height:1.4;
+  border-bottom:1px solid #f3f4f6;transition:background .15s,color .15s
+}
+.dropdown-menu a:last-child{border-bottom:none}
+.dropdown-menu a:hover{background:#fff7f3;color:var(--orange)}
+/* Mobile dropdown */
+.mob-dropdown-toggle{
+  font-weight:700;font-size:15px;padding:12px 0;color:var(--dark);
+  border-bottom:1px solid #f3f4f6;cursor:pointer;
+  display:flex;justify-content:space-between;align-items:center;
+  background:none;border-left:none;border-right:none;border-top:none;
+  width:100%;font-family:"Be Vietnam Pro",sans-serif;transition:color .2s
+}
+.mob-dropdown-toggle:hover{color:var(--orange)}
+.mob-dropdown-toggle .arr{transition:transform .2s;font-size:11px;opacity:.6}
+.mob-dropdown-toggle.open .arr{transform:rotate(-180deg)}
+.mob-sub{display:none;flex-direction:column;background:#fff7f3;border-radius:8px;margin:4px 0 8px;overflow:hidden}
+.mob-sub.open{display:flex}
+.mob-sub a{
+  font-size:13.5px;font-weight:600;padding:10px 16px;color:var(--dark);
+  border-bottom:1px solid rgba(0,0,0,.05);line-height:1.45
+}
+.mob-sub a:last-child{border:none}
+.mob-sub a:hover{color:var(--orange)}
+
 /* ============================================================
    HERO
 ============================================================ */
@@ -509,6 +551,27 @@ footer{background:#0d1f13;color:rgba(255,255,255,.75);padding:56px clamp(16px,5v
     <li><a href="#itinerary" id="nav-itinerary">Lịch Trình</a></li>
     <li><a href="#pricing" id="nav-pricing">Giá Tour</a></li>
     <li><a href="#booking" id="nav-booking">Đặt Tour</a></li>
+    <li class="nav-dropdown">
+      <a href="#" id="nav-other-laos">Các tour Lào khác</a>
+      <div class="dropdown-menu">
+        <div class="dropdown-inner">
+        <!-- =============================================
+             LINK 1: Thay href="#" bên dưới bằng link đến trang
+             HCM-Viêng Chăn-Luang Prabang-Vang Vieng 5N4Đ
+             ============================================= -->
+        <a href="#" id="dropdown-tour-lao-5n4d" target="_blank">
+          🛫 Hồ Chí Minh – Viêng Chăn – Luang Prabang – Vang Vieng 5N4Đ
+        </a>
+        <!-- =============================================
+             LINK 2: Thay href="#" bên dưới bằng link đến trang
+             Lào – Cao nguyên Boloven 4N3Đ
+             ============================================= -->
+        <a href="#" id="dropdown-tour-boloven-4n3d" target="_blank">
+          🌿 Lào – Cao nguyên Boloven 4N3Đ
+        </a>
+        </div>
+      </div>
+    </li>
   </ul>
   <a href="#booking" class="nav-cta" id="nav-cta-booking">🌏 Đặt Ngay</a>
   <button class="hamburger" onclick="toggleMob()" aria-label="Menu">
@@ -522,6 +585,25 @@ footer{background:#0d1f13;color:rgba(255,255,255,.75);padding:56px clamp(16px,5v
   <a href="#itinerary" onclick="toggleMob()" id="mob-itinerary">Lịch Trình</a>
   <a href="#pricing" onclick="toggleMob()" id="mob-pricing">Giá Tour</a>
   <a href="#booking" onclick="toggleMob()" id="mob-booking">🌏 Đặt Tour Ngay</a>
+  <button class="mob-dropdown-toggle" onclick="toggleMobSub(this)" id="mob-other-laos-toggle">
+    Các tour Lào khác <span class="arr">▾</span>
+  </button>
+  <div class="mob-sub" id="mob-sub-laos">
+    <!-- =============================================
+         LINK 1 (mobile): Thay href="#" bằng link đến trang
+         HCM-Viêng Chăn-Luang Prabang-Vang Vieng 5N4Đ
+         ============================================= -->
+    <a href="#" id="mob-tour-lao-5n4d" target="_blank" onclick="toggleMob()">
+      🛫 HCM – Viêng Chăn – Luang Prabang – Vang Vieng 5N4Đ
+    </a>
+    <!-- =============================================
+         LINK 2 (mobile): Thay href="#" bằng link đến trang
+         Lào – Cao nguyên Boloven 4N3Đ
+         ============================================= -->
+    <a href="#" id="mob-tour-boloven-4n3d" target="_blank" onclick="toggleMob()">
+      🌿 Lào – Cao nguyên Boloven 4N3Đ
+    </a>
+  </div>
 </div>
 
 <section class="hero" id="home">
@@ -874,7 +956,7 @@ footer{background:#0d1f13;color:rgba(255,255,255,.75);padding:56px clamp(16px,5v
              src="https://vietkite.com.vn/wp-content/uploads/2024/12/khach-hang-vietkite-1.jpg"
              onerror="this.src='https://ui-avatars.com/api/?name=Nguyen+Van+A&background=E8510A&color=fff&size=44'"
              alt="Nguyễn Văn A">
-        <div><div class="rev-name">Nguyễn Văn A</div><div class="rev-loc">TP.HCM · Tháng 3/2025</div></div>
+        <div><div class="rev-name">Nguyễn Văn Cường</div><div class="rev-loc">TP.HCM · Tháng 3/2025</div></div>
       </div>
     </div>
 
@@ -886,7 +968,7 @@ footer{background:#0d1f13;color:rgba(255,255,255,.75);padding:56px clamp(16px,5v
              src="https://vietkite.com.vn/wp-content/uploads/2024/12/khach-hang-vietkite-2.jpg"
              onerror="this.src='https://ui-avatars.com/api/?name=Tran+Thi+B&background=1A7D3C&color=fff&size=44'"
              alt="Trần Thị B">
-        <div><div class="rev-name">Trần Thị B</div><div class="rev-loc">Bình Dương · Tháng 4/2025</div></div>
+        <div><div class="rev-name">Trần Ngọc Khánh Hi</div><div class="rev-loc">Bình Dương · Tháng 4/2025</div></div>
       </div>
     </div>
 
@@ -898,7 +980,7 @@ footer{background:#0d1f13;color:rgba(255,255,255,.75);padding:56px clamp(16px,5v
              src="https://vietkite.com.vn/wp-content/uploads/2024/12/khach-hang-vietkite-3.jpg"
              onerror="this.src='https://ui-avatars.com/api/?name=Le+Van+C&background=F5A623&color=fff&size=44'"
              alt="Lê Văn C">
-        <div><div class="rev-name">Lê Văn C</div><div class="rev-loc">Đồng Nai · Tháng 5/2025</div></div>
+        <div><div class="rev-name">Phạm Nhật Thành</div><div class="rev-loc">Đồng Nai · Tháng 5/2025</div></div>
       </div>
     </div>
 
@@ -1067,6 +1149,11 @@ footer{background:#0d1f13;color:rgba(255,255,255,.75);padding:56px clamp(16px,5v
 
 <script>
 function toggleMob(){document.getElementById("mobMenu").classList.toggle("open")}
+function toggleMobSub(btn){
+  btn.classList.toggle("open");
+  const sub=document.getElementById("mob-sub-laos");
+  sub.classList.toggle("open");
+}
 document.addEventListener("click",function(e){
   const m=document.getElementById("mobMenu"),n=document.querySelector("nav");
   if(!n.contains(e.target))m.classList.remove("open");
